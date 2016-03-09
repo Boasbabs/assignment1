@@ -131,11 +131,12 @@
 				  var year = parseInt(prompt("Next 100 leap Years from: "));
 				  var num = 100, lpYear = "";
 				  while(num > 0) {
-				    if(year % 4 === 0 && year % 100 != 0 || (year % 400 === 0)) {
+				    if(year % 4 === 0 && (year % 100 !== 0 || (year % 100 ==0 && year % 400 === 0))) {
 				        lpYear += year + ", ";
-				        year++;
-				    	num--; } 
-				      else { year++; }
+				        
+				    	num-- } ;
+				     // else { year++; }
+				     year += 1;
 				  }
 				  document.getElementById("result").innerHTML = lpYear;
 				}
